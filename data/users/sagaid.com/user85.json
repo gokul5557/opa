@@ -1,0 +1,12 @@
+{
+  "prefixes": [
+    "/api/method/saga_auth",
+    "/mail",
+    "/drive",
+    "/api/method/saga_directory"
+  ],
+  "permissions": [
+    "read",
+    "write"
+  ]
+}

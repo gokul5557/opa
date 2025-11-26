@@ -1,0 +1,9 @@
+{
+  "prefixes": [
+    "/"
+  ],
+  "permissions": [
+    "read",
+    "write"
+  ]
+}
