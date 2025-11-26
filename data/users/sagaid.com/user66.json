@@ -1,11 +1,7 @@
 {
   "prefixes": [
     "/drive",
-    "/api/method/organization",
-    "/calendar",
-    "/mail",
-    "/meet",
-    "/rooms"
+    "/mail"
   ],
   "permissions": [
     "write",

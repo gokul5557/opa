@@ -1,8 +1,7 @@
 {
   "prefixes": [
-    "/api/method/organization",
-    "/mail",
-    "/drive"
+    "/drive",
+    "/mail"
   ],
   "permissions": [
     "write",

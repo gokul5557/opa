@@ -3,8 +3,10 @@
     "/drive",
     "/calendar",
     "/meet",
+    "/api/method/saga_directory",
     "/mail",
-    "/rooms"
+    "/rooms",
+    "/api/method/saga_auth"
   ],
   "permissions": [
     "write",

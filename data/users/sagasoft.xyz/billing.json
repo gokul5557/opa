@@ -1,8 +1,8 @@
 {
   "prefixes": [
-    "/api/method/billing",
+    "/drive",
     "/mail",
-    "/drive"
+    "/api/method/billing"
   ],
   "permissions": [
     "write",
