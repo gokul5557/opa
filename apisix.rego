@@ -22,7 +22,7 @@ user_email := email if {
 }
 
 # Helper: Get User Config from OPA Data
-user_roles := data.users[user_email].roles
+user_config := data.users[user_email]
 
 # 1. Shared / Public Paths (Always Allowed)
 allow = {"allow": true} if {
@@ -41,49 +41,38 @@ is_shared_path if {
 
 # 2. User Access Check
 allow = {"allow": true} if {
-    # Ensure user is authenticated (has email)
-    user_email
+    # Ensure user exists in config
+    user_config
     
-    # Ensure user has roles
-    user_roles
+    # Check Permission (Read/Write)
+    has_permission
     
-    # Check if ANY role grants permission
-    some role1 in user_roles
-    has_permission(role1, method)
-    
-    # Check if ANY role grants service access
-    some role2 in user_roles
-    has_service_access(role2, path)
+    # Check Service Access (Prefix Match)
+    has_service_access
 }
 
 # Permission Logic
-has_permission(role, method) if {
+has_permission if {
     method == "GET"
-    "read" in data.roles[role].permissions
+    "read" in user_config.permissions
 }
-has_permission(role, method) if {
+has_permission if {
     method in ["POST", "PUT", "DELETE", "PATCH"]
-    "write" in data.roles[role].permissions
+    "write" in user_config.permissions
 }
-has_permission(role, method) if {
+has_permission if {
     method == "OPTIONS" # Always allow OPTIONS
 }
 
 # Service Access Logic
-has_service_access(role, path) if {
-    # Get allowed services for the role
-    some svc_name in data.roles[role].services
-    
-    # Get prefixes for the service
-    some prefix in data.services[svc_name]
-    
-    # Check if path starts with prefix
+has_service_access if {
+    some prefix in user_config.prefixes
     startswith(path, prefix)
 }
 
 debug = {
     "email": user_email,
-    "roles": user_roles,
-    "permissions_check": [role | role := user_roles[_]; has_permission(role, method)],
-    "service_check": [role | role := user_roles[_]; has_service_access(role, path)]
+    "config": user_config,
+    "has_permission": has_permission,
+    "has_service_access": has_service_access
 }

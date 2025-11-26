@@ -20,7 +20,6 @@ SERVICES = {
 }
 
 # Plans (Define which services are available)
-# We will convert these to "Roles" in data.json so the policy can handle them uniformly
 PLANS = {
     "basic": ["mail", "drive"],
     "pro": ["mail", "drive", "calendar"],
@@ -94,41 +93,50 @@ USERS = {
 }
 
 # ==========================================
-# 2. GENERATION LOGIC
+# 2. LOGIC (Pre-calculation)
 # ==========================================
-def generate_data_json():
-    data = {
-        "services": SERVICES,
-        "roles": {},
-        "users": {}
-    }
-
-    # 1. Convert ROLES
-    for role_name, config in ROLES.items():
-        data["roles"][role_name] = config
-
-    # 2. Convert PLANS to ROLES (prefixed with 'plan_')
-    # This allows the Rego policy to treat plans just like roles that grant service access
-    for plan_name, services in PLANS.items():
-        role_name = f"plan_{plan_name}"
-        data["roles"][role_name] = {
-            "services": services,
-            "permissions": [] # Plans usually just grant access, permissions come from other roles (like employee/guest)
-        }
-
-    # 3. Convert USERS
+def calculate_effective_access():
+    user_config = {}
+    
     for email, config in USERS.items():
-        user_roles = config.get("roles", []).copy()
+        plan_name = config.get("plan")
+        role_names = config.get("roles", [])
         
-        # Add the plan as a role
-        if "plan" in config:
-            user_roles.append(f"plan_{config['plan']}")
-            
-        data["users"][email] = {
-            "roles": user_roles
+        allowed_services = set()
+        allowed_permissions = set()
+        
+        # 1. Add services from Plan
+        if plan_name and plan_name in PLANS:
+            for svc in PLANS[plan_name]:
+                allowed_services.add(svc)
+                
+        # 2. Add services and permissions from Roles
+        for role in role_names:
+            if role in ROLES:
+                role_def = ROLES[role]
+                # Add Role Services
+                for svc in role_def.get("services", []):
+                    allowed_services.add(svc)
+                # Add Role Permissions
+                for perm in role_def.get("permissions", []):
+                    allowed_permissions.add(perm)
+        
+        # 3. Expand "all" service to actual prefixes
+        final_prefixes = set()
+        if "all" in allowed_services:
+            final_prefixes.add("/") # Root allows everything
+        else:
+            for svc in allowed_services:
+                if svc in SERVICES:
+                    for prefix in SERVICES[svc]:
+                        final_prefixes.add(prefix)
+                        
+        user_config[email] = {
+            "prefixes": list(final_prefixes),
+            "permissions": list(allowed_permissions)
         }
-
-    return data
+        
+    return {"users": user_config}
 
 # ==========================================
 # 3. GIT SYNC
@@ -137,7 +145,7 @@ def git_push():
     try:
         print("Committing and pushing changes to Git...")
         subprocess.run(["git", "add", "data.json"], check=True)
-        subprocess.run(["git", "commit", "-m", "Update policy data via admin script"], check=True)
+        subprocess.run(["git", "commit", "-m", "Update policy data via admin script (pre-calc)"], check=True)
         subprocess.run(["git", "push", "origin", "master"], check=True)
         print("✅ Successfully pushed to Git!")
     except subprocess.CalledProcessError as e:
@@ -147,7 +155,7 @@ def git_push():
 
 if __name__ == "__main__":
     # Generate Data
-    data = generate_data_json()
+    data = calculate_effective_access()
     
     # Write to data.json
     with open("data.json", "w") as f:
