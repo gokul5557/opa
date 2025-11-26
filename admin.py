@@ -96,9 +96,13 @@ USERS = {
 # 2. LOGIC (Pre-calculation)
 # ==========================================
 def calculate_effective_access():
+    # Structure: users[domain][username] = {prefixes, permissions}
     user_config = {}
     
     for email, config in USERS.items():
+        # Split email
+        username, domain = email.split("@")
+        
         plan_name = config.get("plan")
         role_names = config.get("roles", [])
         
@@ -130,8 +134,12 @@ def calculate_effective_access():
                 if svc in SERVICES:
                     for prefix in SERVICES[svc]:
                         final_prefixes.add(prefix)
-                        
-        user_config[email] = {
+        
+        # Ensure domain exists
+        if domain not in user_config:
+            user_config[domain] = {}
+            
+        user_config[domain][username] = {
             "prefixes": list(final_prefixes),
             "permissions": list(allowed_permissions)
         }

@@ -22,7 +22,16 @@ user_email := email if {
 }
 
 # Helper: Get User Config from OPA Data
-user_config := data.users[user_email]
+# Supports: data/users/{domain}/{username}.json
+user_config := config if {
+    # Split email into parts
+    parts := split(user_email, "@")
+    username := parts[0]
+    domain := parts[1]
+    
+    # Lookup in nested structure
+    config := data.users[domain][username]
+}
 
 # 1. Shared / Public Paths (Always Allowed)
 allow = {"allow": true} if {
@@ -70,9 +79,7 @@ has_service_access if {
     startswith(path, prefix)
 }
 
-debug = {
-    "email": user_email,
-    "config": user_config,
-    "has_permission": has_permission,
-    "has_service_access": has_service_access
-}
+debug_email = user_email
+debug_config = user_config
+debug_perm = has_permission
+debug_svc = has_service_access
