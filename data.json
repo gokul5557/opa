@@ -36,6 +36,15 @@
         "country": "US",
         "ip": "8.8.8.8"
       }
+    },
+    "testuser": {
+      "roles": [
+        "guest"
+      ],
+      "location": {
+        "country": "US",
+        "ip": "1.2.3.4"
+      }
     }
   },
   "role_permissions": {
