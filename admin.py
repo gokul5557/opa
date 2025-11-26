@@ -1,6 +1,7 @@
 import json
 import os
 import subprocess
+import shutil
 
 # ==========================================
 # 1. CONFIGURATION
@@ -88,7 +89,7 @@ USERS = {
         "plan": "pro",
         "roles": ["employee"]
     },
-    "testuser": {
+    "testuser@sagasoft.io": {
         "plan": "basic",
         "roles": ["employee"]
     }
@@ -188,7 +189,11 @@ def write_split_files():
     count = 0
     for email, config in USERS.items():
         # Split email
-        username, domain = email.split("@")
+        if "@" in email:
+            username, domain = email.split("@")
+        else:
+            print(f"⚠️ Warning: Skipping invalid email '{email}'")
+            continue
         
         # Calculate Permissions (Same logic as before)
         plan_name = config.get("plan")
@@ -236,7 +241,20 @@ def write_split_files():
     print(f"✅ Successfully wrote {count} user files to {USERS_DIR}")
 
 if __name__ == "__main__":
-    print("Generated data.json")
+    # 1. Generate Split Files
+    write_split_files()
     
-    # Push to Git
-    git_push()
+    # 2. Push to Git
+    try:
+        print("Committing and pushing changes to Git...")
+        
+        # Stage ALL changes, including the deletion of data.json
+        subprocess.run(["git", "add", "."], check=True)
+        
+        subprocess.run(["git", "commit", "-m", "Update split policy files (remove data.json)"], check=True)
+        subprocess.run(["git", "push", "origin", "master"], check=True)
+        print("✅ Successfully pushed to Git!")
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Git operation failed: {e}")
+    except Exception as e:
+        print(f"❌ Error: {e}")

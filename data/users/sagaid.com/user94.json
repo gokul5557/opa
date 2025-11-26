@@ -3,7 +3,7 @@
     "/"
   ],
   "permissions": [
-    "write",
-    "read"
+    "read",
+    "write"
   ]
 }

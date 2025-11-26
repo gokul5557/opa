@@ -1,13 +1,15 @@
 {
   "prefixes": [
-    "/drive",
-    "/calendar",
     "/meet",
+    "/drive",
+    "/api/method/saga_auth",
+    "/api/method/saga_directory",
+    "/calendar",
     "/mail",
     "/rooms"
   ],
   "permissions": [
-    "write",
-    "read"
+    "read",
+    "write"
   ]
 }

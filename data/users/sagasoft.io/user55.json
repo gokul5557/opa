@@ -1,5 +1,7 @@
 {
   "prefixes": [
+    "/api/method/organization",
+    "/calendar",
     "/mail",
     "/drive"
   ],
