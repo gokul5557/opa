@@ -2,12 +2,12 @@
   "users": {
     "gokul@sagasoft.io": {
       "prefixes": [
-        "/drive",
-        "/mail"
+        "/mail",
+        "/drive"
       ],
       "permissions": [
-        "write",
-        "read"
+        "read",
+        "write"
       ]
     },
     "gokul@sagaid.com": {
@@ -15,40 +15,40 @@
         "/"
       ],
       "permissions": [
-        "write",
-        "read"
+        "read",
+        "write"
       ]
     },
     "billing@sagasoft.xyz": {
       "prefixes": [
-        "/drive",
         "/mail",
-        "/api/method/billing"
+        "/api/method/billing",
+        "/drive"
       ],
       "permissions": [
-        "write",
-        "read"
+        "read",
+        "write"
       ]
     },
     "guest@sagasoft.xyz": {
       "prefixes": [
-        "/drive",
+        "/mail",
         "/calendar",
-        "/mail"
+        "/drive"
       ],
       "permissions": [
-        "write",
-        "read"
+        "read",
+        "write"
       ]
     },
     "testuser": {
       "prefixes": [
-        "/drive",
-        "/mail"
+        "/mail",
+        "/drive"
       ],
       "permissions": [
-        "write",
-        "read"
+        "read",
+        "write"
       ]
     }
   }
