@@ -69,6 +69,8 @@ ROLES = {
 }
 
 # Users (Assign Plan and Roles)
+import random
+
 USERS = {
     "gokul@sagasoft.io": {
         "plan": "basic",
@@ -91,6 +93,28 @@ USERS = {
         "roles": ["employee"]
     }
 }
+
+# Generate 100 random users
+DOMAINS = ["sagasoft.io", "sagaid.com"]
+PLAN_KEYS = list(PLANS.keys())
+ROLE_KEYS = list(ROLES.keys())
+
+for i in range(1, 101):
+    domain = random.choice(DOMAINS)
+    email = f"user{i}@{domain}"
+    plan = random.choice(PLAN_KEYS)
+    
+    # Randomly assign extra roles
+    roles = ["employee"] # Everyone is an employee by default
+    if random.random() > 0.8: # 20% chance of extra role
+        extra_role = random.choice(ROLE_KEYS)
+        if extra_role != "employee":
+            roles.append(extra_role)
+            
+    USERS[email] = {
+        "plan": plan,
+        "roles": roles
+    }
 
 # ==========================================
 # 2. LOGIC (Pre-calculation)
