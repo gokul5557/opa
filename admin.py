@@ -66,10 +66,6 @@ ROLES = {
     "employee": {
         "services": [], # Services come from PLAN usually
         "permissions": ["read", "write"]
-    },
-    "guest": {
-        "services": [], # Services come from PLAN usually
-        "permissions": ["read"]
     }
 }
 
@@ -89,11 +85,11 @@ USERS = {
     },
     "guest@sagasoft.xyz": {
         "plan": "pro",
-        "roles": ["guest"]
+        "roles": ["employee"]
     },
     "testuser": {
         "plan": "basic",
-        "roles": ["guest"]
+        "roles": ["employee"]
     }
 }
 
