@@ -1,108 +1,44 @@
 {
   "users": {
-    "alice": {
+    "gokul@sagasoft.io": {
       "roles": [
         "admin"
-      ],
-      "location": {
-        "country": "IN",
-        "ip": "8.8.8.8"
-      }
-    },
-    "bob": {
-      "roles": [
-        "employee",
-        "billing"
-      ],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
-    },
-    "sunil": {
-      "roles": [
-        "guest"
-      ],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
-    },
-    "eve": {
-      "roles": [
-        "customer"
-      ],
-      "location": {
-        "country": "US",
-        "ip": "8.8.8.8"
-      }
+      ]
     },
     "testuser": {
       "roles": [
         "guest"
-      ],
-      "location": {
-        "country": "US",
-        "ip": "1.2.3.4"
-      }
+      ]
     }
   },
-  "role_permissions": {
-    "customer": [
-      {
-        "action": "read",
-        "type": "dog"
-      },
-      {
-        "action": "read",
-        "type": "cat"
-      },
-      {
-        "action": "adopt",
-        "type": "dog"
-      },
-      {
-        "action": "adopt",
-        "type": "cat"
-      }
+  "roles": {
+    "admin": {
+      "services": [
+        "all"
+      ],
+      "permissions": [
+        "read",
+        "write"
+      ]
+    },
+    "guest": {
+      "services": [
+        "mail"
+      ],
+      "permissions": [
+        "read"
+      ]
+    }
+  },
+  "services": {
+    "mail": [
+      "/mail"
     ],
-    "employee": [
-      {
-        "action": "read",
-        "type": "dog"
-      },
-      {
-        "action": "read",
-        "type": "cat"
-      },
-      {
-        "action": "update",
-        "type": "dog"
-      },
-      {
-        "action": "update",
-        "type": "cat"
-      }
+    "drive": [
+      "/drive"
     ],
-    "billing": [
-      {
-        "action": "read",
-        "type": "finance"
-      },
-      {
-        "action": "update",
-        "type": "finance"
-      }
-    ],
-    "guest": [
-      {
-        "action": "read",
-        "type": "cat"
-      },
-      {
-        "action": "read",
-        "type": "finance"
-      }
+    "all": [
+      "/"
     ]
   }
 }
