@@ -110,12 +110,6 @@
         "write"
       ]
     },
-    "guest": {
-      "services": [],
-      "permissions": [
-        "read"
-      ]
-    },
     "plan_basic": {
       "services": [
         "mail",
@@ -168,13 +162,13 @@
     },
     "guest@sagasoft.xyz": {
       "roles": [
-        "guest",
+        "employee",
         "plan_pro"
       ]
     },
     "testuser": {
       "roles": [
-        "guest",
+        "employee",
         "plan_basic"
       ]
     }
