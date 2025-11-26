@@ -2,8 +2,8 @@
   "users": {
     "gokul@sagasoft.io": {
       "prefixes": [
-        "/mail",
-        "/drive"
+        "/drive",
+        "/mail"
       ],
       "permissions": [
         "write",
@@ -21,9 +21,9 @@
     },
     "billing@sagasoft.xyz": {
       "prefixes": [
-        "/api/method/billing",
         "/drive",
-        "/mail"
+        "/mail",
+        "/api/method/billing"
       ],
       "permissions": [
         "write",
@@ -32,9 +32,9 @@
     },
     "guest@sagasoft.xyz": {
       "prefixes": [
-        "/mail",
         "/drive",
-        "/calendar"
+        "/calendar",
+        "/mail"
       ],
       "permissions": [
         "write",
@@ -43,8 +43,8 @@
     },
     "testuser": {
       "prefixes": [
-        "/mail",
-        "/drive"
+        "/drive",
+        "/mail"
       ],
       "permissions": [
         "write",
