@@ -1,175 +1,54 @@
 {
-  "services": {
-    "mail": [
-      "/mail"
-    ],
-    "drive": [
-      "/drive"
-    ],
-    "calendar": [
-      "/calendar"
-    ],
-    "meet": [
-      "/meet",
-      "/rooms"
-    ],
-    "chat": [
-      "/chat"
-    ],
-    "admin": [
-      "/api/method/saga_directory",
-      "/api/method/saga_auth"
-    ],
-    "billing": [
-      "/api/method/billing"
-    ],
-    "org": [
-      "/api/method/organization"
-    ],
-    "all": [
-      "/"
-    ]
-  },
-  "roles": {
-    "workspace_admin": {
-      "services": [
-        "all"
-      ],
-      "permissions": [
-        "read",
-        "write"
-      ]
-    },
-    "billing_admin": {
-      "services": [
-        "billing"
-      ],
-      "permissions": [
-        "read",
-        "write"
-      ]
-    },
-    "org_admin": {
-      "services": [
-        "org"
-      ],
-      "permissions": [
-        "read",
-        "write"
-      ]
-    },
-    "user_admin": {
-      "services": [
-        "admin"
-      ],
-      "permissions": [
-        "read",
-        "write"
-      ]
-    },
-    "email_admin": {
-      "services": [
-        "mail"
-      ],
-      "permissions": [
-        "read",
-        "write"
-      ]
-    },
-    "drive_admin": {
-      "services": [
-        "drive"
-      ],
-      "permissions": [
-        "read",
-        "write"
-      ]
-    },
-    "calendar_admin": {
-      "services": [
-        "calendar"
-      ],
-      "permissions": [
-        "read",
-        "write"
-      ]
-    },
-    "meet_admin": {
-      "services": [
-        "meet"
-      ],
-      "permissions": [
-        "read",
-        "write"
-      ]
-    },
-    "employee": {
-      "services": [],
-      "permissions": [
-        "read",
-        "write"
-      ]
-    },
-    "plan_basic": {
-      "services": [
-        "mail",
-        "drive"
-      ],
-      "permissions": []
-    },
-    "plan_pro": {
-      "services": [
-        "mail",
-        "drive",
-        "calendar"
-      ],
-      "permissions": []
-    },
-    "plan_premium": {
-      "services": [
-        "mail",
-        "drive",
-        "calendar",
-        "meet"
-      ],
-      "permissions": []
-    },
-    "plan_enterprise": {
-      "services": [
-        "all"
-      ],
-      "permissions": []
-    }
-  },
   "users": {
     "gokul@sagasoft.io": {
-      "roles": [
-        "employee",
-        "plan_basic"
+      "prefixes": [
+        "/mail",
+        "/drive"
+      ],
+      "permissions": [
+        "write",
+        "read"
       ]
     },
     "gokul@sagaid.com": {
-      "roles": [
-        "workspace_admin",
-        "plan_enterprise"
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
       ]
     },
     "billing@sagasoft.xyz": {
-      "roles": [
-        "billing_admin",
-        "plan_basic"
+      "prefixes": [
+        "/api/method/billing",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
       ]
     },
     "guest@sagasoft.xyz": {
-      "roles": [
-        "employee",
-        "plan_pro"
+      "prefixes": [
+        "/mail",
+        "/drive",
+        "/calendar"
+      ],
+      "permissions": [
+        "write",
+        "read"
       ]
     },
     "testuser": {
-      "roles": [
-        "employee",
-        "plan_basic"
+      "prefixes": [
+        "/mail",
+        "/drive"
+      ],
+      "permissions": [
+        "write",
+        "read"
       ]
     }
   }
