@@ -80,3 +80,10 @@ has_service_access(role, path) if {
     # Check if path starts with prefix
     startswith(path, prefix)
 }
+
+debug = {
+    "email": user_email,
+    "roles": user_roles,
+    "permissions_check": [role | role := user_roles[_]; has_permission(role, method)],
+    "service_check": [role | role := user_roles[_]; has_service_access(role, path)]
+}
