@@ -47,18 +47,13 @@ allow = {"allow": true} if {
     # Ensure user has roles
     user_roles
     
-    # Check if any role allows this action
-    some role in user_roles
-    role_allows(role, method, path)
-}
-
-# Role Logic
-role_allows(role, method, path) if {
-    # Check Permissions
-    has_permission(role, method)
+    # Check if ANY role grants permission
+    some role1 in user_roles
+    has_permission(role1, method)
     
-    # Check Service Access
-    has_service_access(role, path)
+    # Check if ANY role grants service access
+    some role2 in user_roles
+    has_service_access(role2, path)
 }
 
 # Permission Logic
