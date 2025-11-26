@@ -2,12 +2,12 @@
   "users": {
     "gokul@sagasoft.io": {
       "prefixes": [
-        "/mail",
-        "/drive"
+        "/drive",
+        "/mail"
       ],
       "permissions": [
-        "read",
-        "write"
+        "write",
+        "read"
       ]
     },
     "gokul@sagaid.com": {
@@ -15,40 +15,1133 @@
         "/"
       ],
       "permissions": [
-        "read",
-        "write"
+        "write",
+        "read"
       ]
     },
     "billing@sagasoft.xyz": {
       "prefixes": [
-        "/mail",
         "/api/method/billing",
-        "/drive"
+        "/drive",
+        "/mail"
       ],
       "permissions": [
-        "read",
-        "write"
+        "write",
+        "read"
       ]
     },
     "guest@sagasoft.xyz": {
       "prefixes": [
-        "/mail",
         "/calendar",
-        "/drive"
+        "/drive",
+        "/mail"
       ],
       "permissions": [
-        "read",
-        "write"
+        "write",
+        "read"
       ]
     },
     "testuser": {
       "prefixes": [
-        "/mail",
-        "/drive"
+        "/drive",
+        "/mail"
       ],
       "permissions": [
-        "read",
-        "write"
+        "write",
+        "read"
+      ]
+    },
+    "user1@sagaid.com": {
+      "prefixes": [
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user2@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user3@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user4@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user5@sagaid.com": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/api/method/saga_directory",
+        "/drive",
+        "/api/method/saga_auth",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user6@sagasoft.io": {
+      "prefixes": [
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user7@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user8@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user9@sagasoft.io": {
+      "prefixes": [
+        "/drive",
+        "/mail",
+        "/api/method/organization"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user10@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user11@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user12@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user13@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user14@sagaid.com": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user15@sagaid.com": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user16@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user17@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user18@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user19@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user20@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user21@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user22@sagaid.com": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user23@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user24@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user25@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user26@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user27@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user28@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user29@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user30@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user31@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user32@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user33@sagaid.com": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user34@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user35@sagaid.com": {
+      "prefixes": [
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user36@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user37@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user38@sagasoft.io": {
+      "prefixes": [
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user39@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user40@sagasoft.io": {
+      "prefixes": [
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user41@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user42@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user43@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user44@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user45@sagaid.com": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user46@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/mail",
+        "/api/method/saga_directory",
+        "/drive",
+        "/api/method/saga_auth"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user47@sagaid.com": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user48@sagaid.com": {
+      "prefixes": [
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user49@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user50@sagaid.com": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user51@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user52@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user53@sagasoft.io": {
+      "prefixes": [
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user54@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user55@sagaid.com": {
+      "prefixes": [
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user56@sagaid.com": {
+      "prefixes": [
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user57@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user58@sagaid.com": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user59@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user60@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user61@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user62@sagaid.com": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user63@sagaid.com": {
+      "prefixes": [
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user64@sagaid.com": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user65@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user66@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail",
+        "/api/method/organization"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user67@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user68@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user69@sagaid.com": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user70@sagaid.com": {
+      "prefixes": [
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user71@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user72@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user73@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user74@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user75@sagaid.com": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user76@sagaid.com": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user77@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user78@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user79@sagaid.com": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user80@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user81@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user82@sagaid.com": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user83@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user84@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user85@sagaid.com": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user86@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/api/method/saga_directory",
+        "/drive",
+        "/api/method/saga_auth",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user87@sagaid.com": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user88@sagaid.com": {
+      "prefixes": [
+        "/api/method/billing",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user89@sagaid.com": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user90@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user91@sagaid.com": {
+      "prefixes": [
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user92@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user93@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user94@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user95@sagaid.com": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user96@sagasoft.io": {
+      "prefixes": [
+        "/rooms",
+        "/calendar",
+        "/mail",
+        "/drive",
+        "/meet"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user97@sagasoft.io": {
+      "prefixes": [
+        "/calendar",
+        "/drive",
+        "/mail"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user98@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user99@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
+    },
+    "user100@sagasoft.io": {
+      "prefixes": [
+        "/"
+      ],
+      "permissions": [
+        "write",
+        "read"
       ]
     }
   }
