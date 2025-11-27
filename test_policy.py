@@ -10,51 +10,92 @@ OPA_URL = "http://localhost:8181/v1/data/apisix/allow"
 import json
 import os
 
+# Import definitions for logic verification
+from admin import USERS, PLANS, ROLES, SERVICES
+
 # ==========================================
 # TEST CONFIGURATION
 # ==========================================
 OPA_URL = "http://localhost:8181/v1/data/apisix/allow"
-DATA_FILE = "data.json"
 
-def load_users_from_file():
-    if not os.path.exists(DATA_FILE):
-        print(f"❌ Error: {DATA_FILE} not found. Run admin.py first.")
-        return {}
+# We use the USERS dict from admin.py which now loads from users_source.json
+# This ensures we test against the exact same source data.
+
+def get_expected_access(email):
+    config = USERS.get(email)
+    if not config:
+        return set(), set()
+        
+    plan_name = config.get("plan")
+    role_names = config.get("roles", [])
     
-    with open(DATA_FILE, "r") as f:
-        data = json.load(f)
-    return data.get("users", {})
+    allowed_services = set()
+    allowed_permissions = set()
+    
+    # 1. Add services from Plan
+    if plan_name and plan_name in PLANS:
+        for svc in PLANS[plan_name]:
+            allowed_services.add(svc)
+            
+    # 2. Add services and permissions from Roles
+    for role in role_names:
+        if role in ROLES:
+            role_def = ROLES[role]
+            for svc in role_def.get("services", []):
+                allowed_services.add(svc)
+            for perm in role_def.get("permissions", []):
+                allowed_permissions.add(perm)
+                
+    # 3. Expand "all"
+    final_prefixes = set()
+    if "all" in allowed_services:
+        final_prefixes.add("/")
+    else:
+        for svc in allowed_services:
+            if svc in SERVICES:
+                for prefix in SERVICES[svc]:
+                    final_prefixes.add(prefix)
+                    
+    return final_prefixes, allowed_permissions
 
-# Generate Test Cases from data.json
+# Generate Test Cases dynamically
 TEST_CASES = []
 
 # 1. Public Paths
 TEST_CASES.append((None, "GET", "/auth/login", True))
 
-# 2. Verify Users from File
-users_data = load_users_from_file()
-
-for email, config in users_data.items():
-    prefixes = config.get("prefixes", [])
-    permissions = config.get("permissions", [])
+# 2. Verify ALL Users
+for email in USERS:
+    prefixes, permissions = get_expected_access(email)
     
-    # Helper to check if a path is allowed by prefixes
-    def is_path_allowed(path):
-        for p in prefixes:
-            if p == "/" or path.startswith(p):
-                return True
-        return False
-
     # Test Mail Access
-    should_allow_mail = is_path_allowed("/mail/inbox") and "read" in permissions
+    should_allow_mail = False
+    for p in prefixes:
+        if p == "/" or p.startswith("/mail"):
+            should_allow_mail = True
+            break
+    if "read" not in permissions: should_allow_mail = False
+    
     TEST_CASES.append((email, "GET", "/mail/inbox", should_allow_mail))
     
     # Test Drive Access
-    should_allow_drive = is_path_allowed("/drive/files") and "read" in permissions
+    should_allow_drive = False
+    for p in prefixes:
+        if p == "/" or p.startswith("/drive"):
+            should_allow_drive = True
+            break
+    if "read" not in permissions: should_allow_drive = False
+    
     TEST_CASES.append((email, "GET", "/drive/files", should_allow_drive))
     
-    # Test Billing Access
-    should_allow_billing = is_path_allowed("/api/method/billing") and "read" in permissions
+    # Test Billing Access (Restricted)
+    should_allow_billing = False
+    for p in prefixes:
+        if p == "/" or p.startswith("/api/method/billing"):
+            should_allow_billing = True
+            break
+    if "read" not in permissions: should_allow_billing = False
+    
     TEST_CASES.append((email, "GET", "/api/method/billing", should_allow_billing))
 
 
