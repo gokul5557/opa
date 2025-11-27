@@ -2,8 +2,9 @@
   "prefixes": [
     "/drive",
     "/mail",
-    "/calendar",
-    "/api/method/billing"
+    "/api/method/saga_directory",
+    "/api/method/saga_auth",
+    "/calendar"
   ],
   "permissions": [
     "write",
