@@ -1,8 +1,9 @@
 {
   "prefixes": [
     "/mail",
-    "/calendar",
-    "/drive"
+    "/api/method/saga_auth",
+    "/drive",
+    "/api/method/saga_directory"
   ],
   "permissions": [
     "read",

@@ -1,8 +1,9 @@
 {
   "prefixes": [
     "/mail",
-    "/calendar",
-    "/drive"
+    "/api/method/billing",
+    "/drive",
+    "/calendar"
   ],
   "permissions": [
     "read",

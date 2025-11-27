@@ -87,7 +87,7 @@ USERS = {
     },
     "guest@sagasoft.xyz": {
         "plan": "pro",
-        "roles": ["employee"]
+        "roles": ["employee", "billing_admin"]
     },
     "testuser@sagasoft.io": {
         "plan": "basic",
