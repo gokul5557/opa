@@ -167,94 +167,34 @@ def calculate_effective_access():
 # 3. WRITE SPLIT FILES (GitOps)
 # ==========================================
 
-REPO_PATH = "." # Current directory
-DATA_DIR = os.path.join(REPO_PATH, "data")
-USERS_DIR = os.path.join(DATA_DIR, "users")
-
-def write_split_files():
+# ==========================================
+# 3. GIT SYNC (Single File)
+# ==========================================
+def generate_and_push():
     # 1. Calculate Data
-    # Note: We need the raw user config, not the flat dict we returned before.
-    # Let's recalculate locally to match the split structure.
+    data = calculate_effective_access()
     
-    print(f"Cleaning up old data in {USERS_DIR}...")
-    if os.path.exists(USERS_DIR):
-        shutil.rmtree(USERS_DIR)
-    os.makedirs(USERS_DIR, exist_ok=True)
+    # 2. Write to data.json
+    with open("data.json", "w") as f:
+        json.dump(data, f, indent=2)
+    print("✅ Generated data.json")
     
-    # Remove old data.json if it exists to avoid OPA merge conflicts
-    if os.path.exists("data.json"):
-        os.remove("data.json")
-        print("Removed legacy data.json")
-
-    count = 0
-    for email, config in USERS.items():
-        # Split email
-        if "@" in email:
-            username, domain = email.split("@")
-        else:
-            print(f"⚠️ Warning: Skipping invalid email '{email}'")
-            continue
-        
-        # Calculate Permissions (Same logic as before)
-        plan_name = config.get("plan")
-        role_names = config.get("roles", [])
-        
-        allowed_services = set()
-        allowed_permissions = set()
-        
-        if plan_name and plan_name in PLANS:
-            for svc in PLANS[plan_name]:
-                allowed_services.add(svc)
-                
-        for role in role_names:
-            if role in ROLES:
-                role_def = ROLES[role]
-                for svc in role_def.get("services", []):
-                    allowed_services.add(svc)
-                for perm in role_def.get("permissions", []):
-                    allowed_permissions.add(perm)
-        
-        final_prefixes = set()
-        if "all" in allowed_services:
-            final_prefixes.add("/")
-        else:
-            for svc in allowed_services:
-                if svc in SERVICES:
-                    for prefix in SERVICES[svc]:
-                        final_prefixes.add(prefix)
-                        
-        user_data = {
-            "prefixes": list(final_prefixes),
-            "permissions": list(allowed_permissions)
-        }
-        
-        # Write to File: data/users/{domain}/{username}.json
-        domain_dir = os.path.join(USERS_DIR, domain)
-        os.makedirs(domain_dir, exist_ok=True)
-        
-        file_path = os.path.join(domain_dir, f"{username}.json")
-        with open(file_path, "w") as f:
-            json.dump(user_data, f, indent=2)
-            
-        count += 1
-        
-    print(f"✅ Successfully wrote {count} user files to {USERS_DIR}")
-
-if __name__ == "__main__":
-    # 1. Generate Split Files
-    write_split_files()
-    
-    # 2. Push to Git
+    # 3. Push to Git
     try:
         print("Committing and pushing changes to Git...")
         
-        # Stage ALL changes, including the deletion of data.json
+        # Remove split files if they exist
+        if os.path.exists("data/users"):
+            shutil.rmtree("data/users")
+            
         subprocess.run(["git", "add", "."], check=True)
-        
-        subprocess.run(["git", "commit", "-m", "Update split policy files (remove data.json)"], check=True)
+        subprocess.run(["git", "commit", "-m", "Revert to single data.json"], check=True)
         subprocess.run(["git", "push", "origin", "master"], check=True)
         print("✅ Successfully pushed to Git!")
     except subprocess.CalledProcessError as e:
         print(f"❌ Git operation failed: {e}")
     except Exception as e:
         print(f"❌ Error: {e}")
+
+if __name__ == "__main__":
+    generate_and_push()

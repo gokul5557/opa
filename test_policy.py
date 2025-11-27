@@ -14,38 +14,25 @@ import os
 # TEST CONFIGURATION
 # ==========================================
 OPA_URL = "http://localhost:8181/v1/data/apisix/allow"
-DATA_DIR = "data/users"
+DATA_FILE = "data.json"
 
-def load_users_from_split_files():
-    users = {}
-    if not os.path.exists(DATA_DIR):
-        print(f"❌ Error: {DATA_DIR} not found. Run admin.py first.")
+def load_users_from_file():
+    if not os.path.exists(DATA_FILE):
+        print(f"❌ Error: {DATA_FILE} not found. Run admin.py first.")
         return {}
     
-    # Walk through data/users/{domain}/{username}.json
-    for root, dirs, files in os.walk(DATA_DIR):
-        for file in files:
-            if file.endswith(".json"):
-                # Extract domain and username
-                # root looks like "data/users/sagasoft.io"
-                domain = os.path.basename(root)
-                username = file.replace(".json", "")
-                email = f"{username}@{domain}"
-                
-                path = os.path.join(root, file)
-                with open(path, "r") as f:
-                    users[email] = json.load(f)
-                    
-    return users
+    with open(DATA_FILE, "r") as f:
+        data = json.load(f)
+    return data.get("users", {})
 
-# Generate Test Cases from Split Files
+# Generate Test Cases from data.json
 TEST_CASES = []
 
 # 1. Public Paths
 TEST_CASES.append((None, "GET", "/auth/login", True))
 
-# 2. Verify Users from Files
-users_data = load_users_from_split_files()
+# 2. Verify Users from File
+users_data = load_users_from_file()
 
 for email, config in users_data.items():
     prefixes = config.get("prefixes", [])
