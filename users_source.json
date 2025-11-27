@@ -1,0 +1,646 @@
+{
+  "gokul@sagasoft.io": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "gokul@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "workspace_admin"
+    ]
+  },
+  "billing@sagasoft.xyz": {
+    "plan": "basic",
+    "roles": [
+      "billing_admin"
+    ]
+  },
+  "guest@sagasoft.xyz": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "testuser@sagasoft.io": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user1@sagasoft.io": {
+    "plan": "premium",
+    "roles": [
+      "employee",
+      "drive_admin"
+    ]
+  },
+  "user2@sagasoft.io": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user3@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user4@sagasoft.io": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user5@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee",
+      "billing_admin"
+    ]
+  },
+  "user6@sagasoft.io": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user7@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user8@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user9@sagasoft.io": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user10@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user11@sagaid.com": {
+    "plan": "premium",
+    "roles": [
+      "employee",
+      "meet_admin"
+    ]
+  },
+  "user12@sagasoft.io": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user13@sagaid.com": {
+    "plan": "premium",
+    "roles": [
+      "employee",
+      "org_admin"
+    ]
+  },
+  "user14@sagasoft.io": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user15@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user16@sagaid.com": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user17@sagasoft.io": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user18@sagaid.com": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user19@sagasoft.io": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user20@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user21@sagaid.com": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user22@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user23@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user24@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user25@sagaid.com": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user26@sagasoft.io": {
+    "plan": "pro",
+    "roles": [
+      "employee",
+      "drive_admin"
+    ]
+  },
+  "user27@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user28@sagasoft.io": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user29@sagasoft.io": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user30@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user31@sagasoft.io": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user32@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user33@sagasoft.io": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user34@sagasoft.io": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user35@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user36@sagasoft.io": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user37@sagasoft.io": {
+    "plan": "basic",
+    "roles": [
+      "employee",
+      "user_admin"
+    ]
+  },
+  "user38@sagasoft.io": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user39@sagasoft.io": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user40@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user41@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user42@sagasoft.io": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user43@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user44@sagaid.com": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user45@sagasoft.io": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user46@sagasoft.io": {
+    "plan": "basic",
+    "roles": [
+      "employee",
+      "calendar_admin"
+    ]
+  },
+  "user47@sagasoft.io": {
+    "plan": "premium",
+    "roles": [
+      "employee",
+      "drive_admin"
+    ]
+  },
+  "user48@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user49@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee",
+      "drive_admin"
+    ]
+  },
+  "user50@sagasoft.io": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user51@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user52@sagasoft.io": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user53@sagasoft.io": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user54@sagasoft.io": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user55@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user56@sagaid.com": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user57@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user58@sagasoft.io": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user59@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user60@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user61@sagaid.com": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user62@sagasoft.io": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user63@sagasoft.io": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user64@sagasoft.io": {
+    "plan": "enterprise",
+    "roles": [
+      "employee",
+      "billing_admin"
+    ]
+  },
+  "user65@sagasoft.io": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user66@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user67@sagasoft.io": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user68@sagaid.com": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user69@sagasoft.io": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user70@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user71@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user72@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user73@sagasoft.io": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user74@sagasoft.io": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user75@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user76@sagaid.com": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user77@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user78@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user79@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user80@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user81@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user82@sagasoft.io": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user83@sagasoft.io": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user84@sagaid.com": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user85@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee",
+      "user_admin"
+    ]
+  },
+  "user86@sagasoft.io": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user87@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user88@sagasoft.io": {
+    "plan": "basic",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user89@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user90@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user91@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee",
+      "workspace_admin"
+    ]
+  },
+  "user92@sagasoft.io": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user93@sagaid.com": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user94@sagasoft.io": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user95@sagaid.com": {
+    "plan": "basic",
+    "roles": [
+      "employee",
+      "meet_admin"
+    ]
+  },
+  "user96@sagasoft.io": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user97@sagaid.com": {
+    "plan": "premium",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user98@sagaid.com": {
+    "plan": "pro",
+    "roles": [
+      "employee",
+      "drive_admin"
+    ]
+  },
+  "user99@sagasoft.io": {
+    "plan": "pro",
+    "roles": [
+      "employee"
+    ]
+  },
+  "user100@sagasoft.io": {
+    "plan": "enterprise",
+    "roles": [
+      "employee"
+    ]
+  }
+}

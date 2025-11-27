@@ -72,50 +72,69 @@ ROLES = {
 # Users (Assign Plan and Roles)
 import random
 
-USERS = {
-    "gokul@sagasoft.io": {
-        "plan": "basic",
-        "roles": ["employee"]
-    },
-    "gokul@sagaid.com": {
-        "plan": "enterprise",
-        "roles": ["workspace_admin"]
-    },
-    "billing@sagasoft.xyz": {
-        "plan": "basic",
-        "roles": ["billing_admin"]
-    },
-    "guest@sagasoft.xyz": {
-        "plan": "pro",
-        "roles": ["employee", "billing_admin"]
-    },
-    "testuser@sagasoft.io": {
-        "plan": "basic",
-        "roles": ["employee"]
+# Users Source File (The "Database")
+USERS_SOURCE_FILE = "users_source.json"
+
+def load_or_generate_users():
+    # 1. Try to load existing users
+    if os.path.exists(USERS_SOURCE_FILE):
+        print(f"📂 Loading users from {USERS_SOURCE_FILE}...")
+        with open(USERS_SOURCE_FILE, "r") as f:
+            return json.load(f)
+
+    # 2. Generate if not exists
+    print("⚡ Generating 100 random users...")
+    users = {
+        "gokul@sagasoft.io": {
+            "plan": "basic",
+            "roles": ["employee"]
+        },
+        "gokul@sagaid.com": {
+            "plan": "enterprise",
+            "roles": ["workspace_admin"]
+        },
+        "billing@sagasoft.xyz": {
+            "plan": "basic",
+            "roles": ["billing_admin"]
+        },
+        "guest@sagasoft.xyz": {
+            "plan": "pro",
+            "roles": ["employee"]
+        },
+        "testuser@sagasoft.io": {
+            "plan": "basic",
+            "roles": ["employee"]
+        }
     }
-}
 
-# Generate 100 random users
-DOMAINS = ["sagasoft.io", "sagaid.com"]
-PLAN_KEYS = list(PLANS.keys())
-ROLE_KEYS = list(ROLES.keys())
+    DOMAINS = ["sagasoft.io", "sagaid.com"]
+    PLAN_KEYS = list(PLANS.keys())
+    ROLE_KEYS = list(ROLES.keys())
 
-for i in range(1, 101):
-    domain = random.choice(DOMAINS)
-    email = f"user{i}@{domain}"
-    plan = random.choice(PLAN_KEYS)
+    for i in range(1, 101):
+        domain = random.choice(DOMAINS)
+        email = f"user{i}@{domain}"
+        plan = random.choice(PLAN_KEYS)
+        
+        roles = ["employee"]
+        if random.random() > 0.8:
+            extra_role = random.choice(ROLE_KEYS)
+            if extra_role != "employee":
+                roles.append(extra_role)
+                
+        users[email] = {
+            "plan": plan,
+            "roles": roles
+        }
+        
+    # Save to file
+    with open(USERS_SOURCE_FILE, "w") as f:
+        json.dump(users, f, indent=2)
+    print(f"💾 Saved generated users to {USERS_SOURCE_FILE}")
     
-    # Randomly assign extra roles
-    roles = ["employee"] # Everyone is an employee by default
-    if random.random() > 0.8: # 20% chance of extra role
-        extra_role = random.choice(ROLE_KEYS)
-        if extra_role != "employee":
-            roles.append(extra_role)
-            
-    USERS[email] = {
-        "plan": plan,
-        "roles": roles
-    }
+    return users
+
+USERS = load_or_generate_users()
 
 # ==========================================
 # 2. LOGIC (Pre-calculation)
