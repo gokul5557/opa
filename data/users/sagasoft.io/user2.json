@@ -2,9 +2,10 @@
   "prefixes": [
     "/meet",
     "/mail",
+    "/drive",
     "/rooms",
     "/calendar",
-    "/drive"
+    "/api/method/organization"
   ],
   "permissions": [
     "read",
