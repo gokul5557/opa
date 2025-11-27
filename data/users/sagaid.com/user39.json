@@ -1,12 +1,13 @@
 {
   "prefixes": [
-    "/api/method/billing",
-    "/calendar",
+    "/drive",
     "/mail",
-    "/drive"
+    "/calendar",
+    "/meet",
+    "/rooms"
   ],
   "permissions": [
-    "read",
-    "write"
+    "write",
+    "read"
   ]
 }
