@@ -1,9 +1,8 @@
 {
   "prefixes": [
+    "/api/method/billing",
     "/drive",
     "/mail",
-    "/api/method/saga_directory",
-    "/api/method/saga_auth",
     "/calendar"
   ],
   "permissions": [

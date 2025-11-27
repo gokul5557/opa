@@ -1,7 +1,6 @@
 {
   "prefixes": [
-    "/drive",
-    "/mail"
+    "/"
   ],
   "permissions": [
     "write",
