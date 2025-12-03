@@ -1169,6 +1169,16 @@
         "write",
         "read"
       ]
+    },
+    "test@gmail.com": {
+      "prefixes": [
+        "/mail",
+        "/drive"
+      ],
+      "permissions": [
+        "write",
+        "read"
+      ]
     }
   }
 }
